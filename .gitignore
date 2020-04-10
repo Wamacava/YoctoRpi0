@@ -1,4 +1,10 @@
 yocto/poky/*
 yocto/meta-openembedded/*
 yocto/meta-raspberrypi/*
+build/rpi0/bitbake-cookerdaemon.log
+build/rpi0/cache/
+build/rpi0/tmp/
+downloads/
+sstate-cache/
+yocto/poky/
 
