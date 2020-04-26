@@ -23,7 +23,7 @@ To create SD card:
 *)check your SD card drive name with $ lsblk
 
 *) $ sudo umount /dev/sdX*     <- sdX here is SD card name
-*) $ sudo dd if=tmp/deploy/images/raspberrypi3-64/core-image-base-raspberrypi3-64.rpi-sdimg of=/dev/sdb bs=1M
+*) $ sudo dd if=tmp/deploy/images/raspberrypi0-wifi/core-image-base-raspberrypi0-wifi.rpi-sdimg of=/dev/sdX bs=1M
 *) $ sudo umount /dev/sdX*
 
 *) eject SD card and insert it to your pi. Username: root with no password.
