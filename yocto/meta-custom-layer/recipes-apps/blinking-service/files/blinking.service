@@ -6,7 +6,7 @@ Type=simple
 Restart=always
 RestartSec=1
 User=root
-ExecStart=/usr/bin/blinkLed
+ExecStart=/usr/bin/blinking-service
 
 [Install]
 WantedBy=multi-user.target

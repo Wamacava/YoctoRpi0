@@ -7,7 +7,6 @@ SRC_URI = "\
     git://github.com/Wamacava/blinkingLedRpi0;protocol=https;branch=master;user=lukasz\
 "
 
-# SRCREV = "926cf79086392cbfa4d27b79f1da51c970c472d5"
 SRCREV = "${AUTOREV}"
 # PV = "1.0+git${SRCPV}"
 
@@ -31,7 +30,7 @@ EXTRA_OECMAKE = ""
 #not necesary, bitbake will run it by default
 do_install() {
     install -d "${D}${bindir}"
-    install -m 0755 ${WORKDIR}/build/blinkLed "${D}${bindir}"
+    install -m 0755 ${WORKDIR}/build/blinking-service "${D}${bindir}"
 }
 
 REQUIRED_DISTRO_FEATURES = "systemd"
