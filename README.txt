@@ -2,40 +2,38 @@ This project aims to help getting started with yocto build for raspberry pi zero
 
 This README is a main documentation of all steps to make it working.
 
-1) Clone the repo in convinient, empty direcoty.
+1) Clone this repo in convinient, empty direcoty. Cd to this directory
 
-*) $ mkdir sstate tmp build downloads yocto
+2) Run
+   $ mkdir sstate tmp build downloads yocto
 
-*) $ cd yocto 
+3) Download board support package and poky to your yocto directory by running:
+   $ ./download-sources.sh
 
-*) follow intstuctions in README.txt in that folder (cloning yocto repos)
-
-*) in your main project folder run $ source yocto/poky/oe-init-build-env build/rpi0/
-
-*) run $ bitbake core-image-base
-
-*) The last operation will take few hours on the firt time. Next builds will be faster bacuase only changes will be compiled
+4) in your main project folder run 
+   $ ./build-image.sh
 
 
+5) The last operation will take few hours on the firt time. Next builds will be faster bacuase only changes will be compiled
 
 To create SD card:
-1) cd to /projDir/build/rpi0 (you should be there after build finishes)
-*)check your SD card drive name with $ lsblk
+1) cd to your main project directory
+2)check your SD card drive name with 
+   $ lsblk
 
-*) $ sudo umount /dev/sdX*     <- sdX here is SD card name
-*) $ sudo dd if=tmp/deploy/images/raspberrypi0-wifi/core-image-base-raspberrypi0-wifi.rpi-sdimg of=/dev/sdX bs=1M
-*) $ sudo umount /dev/sdX*
+3) Run:
+   $./make-sdcard.sh DRIVENAME(e.g.sdb)
 
-*) eject SD card and insert it to your pi. Username: root with no password.
+4) eject SD card and insert it to your pi. Username: root with no password.
    To connect with ssh you need to follow enable wifi steps first. 
    Otherwise you can connect with USB-TTL cable and have fun. All of this will be described soon
-*) To check that image is working you can connect led to PIN27. There is custom layer with  C++ program which blinks this led. This program and the way of merging it into linux image and systemd will be described soon.
+5) To check that image is working you can connect led to PIN27. There is custom layer with  C++ program which blinks this led. This program and the way of merging it into linux image and systemd will be described soon.
 
 Enable wi-fi
-*) It will be described soon
+*) Coming soon
 
 Create new layer with your python or C++ (CMake app)
 *) Coming soon
 
-Brief description of local.conf and other aspects you should know abour yocto
+Brief description of local.conf and other aspects you should know about yocto
 *) Coming soon
