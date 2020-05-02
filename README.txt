@@ -4,17 +4,14 @@ This README is a main documentation of all steps to make it working.
 
 1) Clone this repo in convinient, empty direcoty. Cd to this directory
 
-2) Run
-   $ mkdir sstate tmp build downloads yocto
+2) Download board support package and poky to your yocto directory by running:
+   $ ./init-project.sh
 
-3) Download board support package and poky to your yocto directory by running:
-   $ ./download-sources.sh
-
-4) in your main project folder run 
+3) in your main project folder run 
    $ ./build-image.sh
 
 
-5) The last operation will take few hours on the firt time. Next builds will be faster bacuase only changes will be compiled
+4) The last operation will take few hours on the firt time. Next builds will be faster bacuase only changes will be compiled
 
 To create SD card:
 1) cd to your main project directory
