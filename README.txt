@@ -37,3 +37,5 @@ Create new layer with your python or C++ (CMake app)
 
 Brief description of local.conf and other aspects you should know about yocto
 *) Coming soon
+
+
