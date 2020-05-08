@@ -4,14 +4,14 @@ This README is a main documentation of all steps to make it working.
 
 1) Clone this repo in convinient, empty direcoty. Cd to this directory
 
-2) Download board support package and poky to your yocto directory by running:
-   $ ./init-project.sh
+$ cd ~ && git clone https://github.com/Wamacava/YoctoRpi0.git
+$ cd YoctoRpi0
 
-3) in your main project folder run 
+2) in your main project folder run 
    $ ./build-image.sh
 
 
-4) The last operation will take few hours on the firt time. Next builds will be faster bacuase only changes will be compiled
+3) The last operation will take few hours on the firt time. Next builds will be faster bacuase only changes will be compiled
 
 To create SD card:
 1) cd to your main project directory
