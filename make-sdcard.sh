@@ -2,7 +2,7 @@
 
 if [ "$#" -lt 1 ]; then
     echo "Pass your sd card drive as an argument."
-    echo "Example call: ./make-sdcard.sh sdb" 
+    echo "Example call: $0 sdb" 
     exit
 fi
 

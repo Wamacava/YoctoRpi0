@@ -1,0 +1,12 @@
+[Unit]
+Description=Blinking service with python
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/usr/bin/python3.7 /etc/python/blinkpython.py
+
+[Install]
+WantedBy=multi-user.target
