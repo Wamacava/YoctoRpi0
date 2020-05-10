@@ -27,7 +27,19 @@ To create SD card:
 5) To check that image is working you can connect led to PIN27. There is custom layer with  C++ program which blinks this led. This program and the way of merging it into linux image and systemd will be described soon.
 
 Enable wi-fi
-*) Coming soon
+1) To connect automaticaly with wifi change ssid and password of your network in:
+projectDir/yocto/meta-custom-layer/recipes-connectivity/wpa-supplicant/files/wpa_supplicant-nl80211-wlan0.conf
+
+You can create this file with:
+$ wpa_passphrase 'YOUR_SSID' >  /wpa_supplicant-nl80211-wlan0.conf
+and type your password after enter. 
+With this method your password will be encrypted. You might want to delete commented password from this file and leave only encrypted one.
+
+TODO MAKE SCRIPT for wpa creation and replacement in the filesystem. 
+when build-image will be started with some flag it will also run this script.
+Timeout  6s in question for changing network credentials with default no.
+Later grep created file and delete commented line (non encrypted password)
+
 
 Create new layer with your python or C++ (CMake app)
 *) Coming soon
