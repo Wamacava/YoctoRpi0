@@ -1,6 +1,6 @@
 This project aims to help getting started with yocto build for raspberry pi zero.
 
-This README is a main documentation of all steps to make it working.
+This README is not a main documentation and only contains steps to make it work.
 
 1) Clone this repo in convinient, empty direcoty. Cd to this directory
 
@@ -10,8 +10,9 @@ $ cd YoctoRpi0
 2) in your main project folder run 
    $ ./build-image.sh
 
+3) If you want your raspberry Pi to automatically connect WiFi press Y when script asks if you want to update network credentials. Then enter your network SSID, hit enter and enter your password
 
-3) The last operation will take few hours on the firt time. Next builds will be faster bacuase only changes will be compiled
+4) The last operation will take few hours on the firt time. Next builds will be faster bacuase only changes will be compiled
 
 To create SD card:
 1) cd to your main project directory
@@ -26,25 +27,19 @@ To create SD card:
    Otherwise you can connect with USB-TTL cable and have fun. All of this will be described soon
 5) To check that image is working you can connect led to PIN27. There is custom layer with  C++ program which blinks this led. This program and the way of merging it into linux image and systemd will be described soon.
 
-Enable wi-fi
-1) To connect automaticaly with wifi change ssid and password of your network in:
-projectDir/yocto/meta-custom-layer/recipes-connectivity/wpa-supplicant/files/wpa_supplicant-nl80211-wlan0.conf
+Manualy change your network credentials:
 
-You can create this file with:
-$ wpa_passphrase 'YOUR_SSID' >  /wpa_supplicant-nl80211-wlan0.conf
-and type your password after enter. 
-With this method your password will be encrypted. You might want to delete commented password from this file and leave only encrypted one.
+   $cd projectDir/yocto/meta-custom-layer/recipes-connectivity/wpa-supplicant/files/wpa_supplicant-nl80211-wlan0.conf
 
-TODO MAKE SCRIPT for wpa creation and replacement in the filesystem. 
-when build-image will be started with some flag it will also run this script.
-Timeout  6s in question for changing network credentials with default no.
-Later grep created file and delete commented line (non encrypted password)
+   $ wpa_passphrase 'YOUR_SSID' >  /wpa_supplicant-nl80211-wlan0.conf
+   and type your password after enter
+   With this method your password will be encrypted. You might want to delete commented password from this file and leave only encrypted one.
 
 
-Create new layer with your python or C++ (CMake app)
-*) Coming soon
+Create new layer with python or C++ (CMake app)
+1) See yocto/meta-custom-layer folder for examples
 
 Brief description of local.conf and other aspects you should know about yocto
-*) Coming soon
+*) In documentation
 
 
