@@ -7,4 +7,5 @@ build/rpi0/tmp/
 downloads/
 sstate-cache/
 yocto/poky/
+yocto/meta-custom-layer/recipes-connectivity/wpa-supplicant/files/wpa_supplicant-nl80211-wlan0.conf
 

@@ -1,0 +1,12 @@
+[Unit]
+Description=Spider service
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/usr/bin/spider-service
+
+[Install]
+WantedBy=multi-user.target
