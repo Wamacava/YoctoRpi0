@@ -25,7 +25,7 @@ function doUpdateNetworkCredentials() {
 
 function initRepo() {
   #if this project is ran for the first time yocto and BSP must be cloned
-  if [ ! -d "yocto" ]
+  if [ ! -d "yocto/poky" ]
   then
     ./init-project.sh
   fi
